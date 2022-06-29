@@ -7,11 +7,11 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Installing dependencies
-COPY package*.json /usr/src/app/
+COPY package*.json .
 RUN npm install
 
 # Copying source files
-COPY . /usr/src/app
+COPY . .
 
 # Building app
 RUN npm run build
