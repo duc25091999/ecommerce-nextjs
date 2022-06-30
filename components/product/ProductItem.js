@@ -27,7 +27,9 @@ const ProductItem = ({ product, handleCheck }) => {
             dispatch(addToFavorite(product, favorite));
           }}
         >
-          <i class={`${isFavorite(product._id) ? "text-black":"text-muted"} fa fa-solid fa-heart`}></i>
+          {
+            isFavorite(product._id) ? <img width={24} src="/black-filled-heart.png"/>: <img width={24} src="/black-outlined-heart.png"/>
+          }
         </div>
         {auth.user && auth.user.role === "admin" && (
           <input
